@@ -52,7 +52,7 @@
     }
 
     a {
-      color: blue;
+      color: var(--secondary-color);
       text-decoration: none;
       flex-direction: column;
       text-transform: uppercase;
