@@ -18,7 +18,7 @@ const Footer = () => {
   }
 
   const handleSubmit = () => {
-    setLoading(true)
+    
     const contact = {
       _type: 'contact',
       name: formData.username,
@@ -29,7 +29,7 @@ const Footer = () => {
     client
       .create(contact)
       .then(() => {
-        setLoading(false)
+        
         setIsFormSubmitted(true)
       })
       .catch((err) => console.log(err))
