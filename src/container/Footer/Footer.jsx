@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
-        <form>
+        <form action=''>
         <div className='app__footer-form app__flex'>
           <div className='app__flex'>
             <input
