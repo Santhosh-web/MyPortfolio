@@ -53,7 +53,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      {!isFormSubmitted ? (
+      {/* {!isFormSubmitted ? (
       
         <form className='app__footer-form app__flex'>
           <div className='app__flex'>
@@ -96,7 +96,7 @@ const Footer = () => {
             Thank you for getting in touch!
           </h3>
         </div>
-      )}
+      )} */}
     </>
   )
 }
