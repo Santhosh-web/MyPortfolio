@@ -8,7 +8,7 @@ import './footer.scss'
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
+  
 
   const { username, email, message } = formData
 
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
-        <form action=''>
+      
         <div className='app__footer-form app__flex'>
           <div className='app__flex'>
             <input
@@ -86,10 +86,10 @@ const Footer = () => {
            required />
           </div>
           <button type='submit' className='p-text' onClick={handleSubmit}>
-            {!loading ? 'Send Message' : 'Sending...'}
+          Send
           </button>
         </div>
-        </form>
+    
       ) : (
         <div>
           <h3 className='head-text app__flex'>
