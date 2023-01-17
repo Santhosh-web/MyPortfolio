@@ -8,7 +8,7 @@ import './footer.scss'
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
+  
 
   const { username, email, message } = formData
 
@@ -54,6 +54,7 @@ const Footer = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
+      
         <div className='app__footer-form app__flex'>
           <div className='app__flex'>
             <input
@@ -63,7 +64,7 @@ const Footer = () => {
               name='username'
               value={username}
               onChange={handleChangeInput}
-            />
+            required/>
           </div>
           <div className='app__flex'>
             <input
@@ -73,7 +74,7 @@ const Footer = () => {
               name='email'
               value={email}
               onChange={handleChangeInput}
-            />
+          required  />
           </div>
           <div>
             <textarea
@@ -82,12 +83,13 @@ const Footer = () => {
               value={message}
               name='message'
               onChange={handleChangeInput}
-            />
+           required />
           </div>
-          <button type='button' className='p-text' onClick={handleSubmit}>
-            {!loading ? 'Send Message' : 'Sending...'}
+          <button type='submit' className='p-text' onClick={handleSubmit}>
+          send
           </button>
         </div>
+    
       ) : (
         <div>
           <h3 className='head-text app__flex'>
