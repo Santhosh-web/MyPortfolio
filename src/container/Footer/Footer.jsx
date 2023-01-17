@@ -86,7 +86,7 @@ const Footer = () => {
            required />
           </div>
           <button type='submit' className='p-text' onClick={handleSubmit}>
-          Send
+          Send Message
           </button>
         </form>
     
