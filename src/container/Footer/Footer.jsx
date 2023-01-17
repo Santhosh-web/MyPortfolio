@@ -55,7 +55,7 @@ const Footer = () => {
       </div>
       {!isFormSubmitted ? (
       
-        <div className='app__footer-form app__flex'>
+        <form className='app__footer-form app__flex'>
           <div className='app__flex'>
             <input
               className='p-text'
@@ -88,7 +88,7 @@ const Footer = () => {
           <button type='submit' className='p-text' onClick={handleSubmit}>
           Send
           </button>
-        </div>
+        </form>
     
       ) : (
         <div>
