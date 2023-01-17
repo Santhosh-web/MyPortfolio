@@ -54,6 +54,7 @@ const Footer = () => {
         </div>
       </div>
       {!isFormSubmitted ? (
+        <form>
         <div className='app__footer-form app__flex'>
           <div className='app__flex'>
             <input
@@ -84,10 +85,11 @@ const Footer = () => {
               onChange={handleChangeInput}
            required />
           </div>
-          <button type='button' className='p-text' onClick={handleSubmit}>
+          <button type='submit' className='p-text' onClick={handleSubmit}>
             {!loading ? 'Send Message' : 'Sending...'}
           </button>
         </div>
+        </form>
       ) : (
         <div>
           <h3 className='head-text app__flex'>
