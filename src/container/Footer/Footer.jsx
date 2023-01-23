@@ -14,7 +14,7 @@ const Footer = () => {
   const { username, email, message } = formData
 
   const handleChangeInput = (e) => {
-    const { name, value } = e.target
+    const { id, value } = e.target
     setFormData({ ...formData, [name]: value })
   }
 
@@ -65,7 +65,7 @@ const Footer = () => {
               className='p-text'
               type='text'
               placeholder='Your Name'
-              name='username'
+              id='username'
               value={username}
               onChange={handleChangeInput}
             required/>
@@ -75,7 +75,7 @@ const Footer = () => {
               className='p-text'
               type='email'
               placeholder='Your Email'
-              name='email'
+              id='email'
               value={email}
               onChange={handleChangeInput}
           required  />
@@ -84,7 +84,7 @@ const Footer = () => {
             <textarea
               className='p-text'
               placeholder='Your Message'
-              value={message}
+              id={message}
               name='message'
               onChange={handleChangeInput}
            required />
