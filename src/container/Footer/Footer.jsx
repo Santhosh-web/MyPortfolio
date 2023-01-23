@@ -15,7 +15,7 @@ const Footer = () => {
 
   const handleChangeInput = (e) => {
     const { id, value } = e.target
-    setFormData({ ...formData, [name]: value })
+    setFormData({ ...formData, [id]: value })
   }
 
   const handleSubmit = () => {
