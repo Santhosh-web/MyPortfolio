@@ -7,7 +7,8 @@ import { Images } from '../.././constants'
 import './footer.scss'
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
   
 
   const { username, email, message } = formData
@@ -18,7 +19,7 @@ const Footer = () => {
   }
 
   const handleSubmit = () => {
-    
+        setLoading(true);
     const contact = {
       _type: 'contact',
       name: formData.username,
@@ -28,10 +29,13 @@ const Footer = () => {
 
     client
       .create(contact)
-      .then(() => {
-        
-        setIsFormSubmitted(true)
-      })
+     .then(() => {
+        setLoading(false);
+        if(!contact){
+          setIsFormSubmitted(true);
+       }else   
+       setIsFormSubmitted(false);
+        })
       .catch((err) => console.log(err))
   }
 
@@ -55,7 +59,7 @@ const Footer = () => {
       </div>
       {!isFormSubmitted ? (
       
-        <div className='app__footer-form app__flex'>
+        <form className='app__footer-form app__flex'>
           <div className='app__flex'>
             <input
               className='p-text'
@@ -86,9 +90,9 @@ const Footer = () => {
            required />
           </div>
           <button type='submit' className='p-text' onClick={handleSubmit}>
-          send
+          {!loading ? 'Send Message' : 'Sending...'}
           </button>
-        </div>
+        </form>
     
       ) : (
         <div>
