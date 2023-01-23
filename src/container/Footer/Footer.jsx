@@ -84,8 +84,8 @@ const Footer = () => {
             <textarea
               className='p-text'
               placeholder='Your Message'
-              id={message}
-              name='message'
+              value={message}
+              id='message'
               onChange={handleChangeInput}
            required />
           </div>
